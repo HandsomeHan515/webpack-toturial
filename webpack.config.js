@@ -11,7 +11,15 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader?minimize'],
+        // 1. use: ['style-loader', 'css-loader?minimize'], // querystring 方式
+        // 2. require('style-loader!css-loader?minimize!./main.css'); 文件中的引用方式
+        // 3.
+        use: ['style-loader', {
+          loader: 'css-loader', // Object 方式
+          options: {
+            minimize: true
+          }
+        }]
       }
     ]
   }
