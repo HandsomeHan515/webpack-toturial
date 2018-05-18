@@ -1,4 +1,5 @@
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -23,4 +24,20 @@ module.exports = {
       }
     ]
   }
+
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.css$/,
+  //       use: ExtractTextPlugin.extract({ // webpack 4 之后不再支持 css
+  //         use: ['css-loader']
+  //       })
+  //     }
+  //   ]
+  // },
+  // plugins: [
+  //   new ExtractTextPlugin({
+  //     filename: `[name]_[contenthash:8].css`
+  //   })
+  // ]
 }

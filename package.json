@@ -5,11 +5,14 @@
   "license": "MIT",
   "devDependencies": {
     "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
     "style-loader": "^0.21.0",
     "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3"
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "start": "webpack --config--progress--color webpack.config.js"
+    "start": "webpack --config--progress--color",
+    "dev": "webpack-dev-server --hot --inline --color --port 8083 --devtool source-map"
   }
 }
