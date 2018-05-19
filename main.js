@@ -1,4 +1,4 @@
-var show = require('./show.js');
+var show = require('./show');
 var styles = require('./main.css');
 
-show(' webpack');
+show(' Webpack');

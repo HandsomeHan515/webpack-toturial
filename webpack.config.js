@@ -10,6 +10,9 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, './dist')
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
       {
@@ -26,7 +29,7 @@ module.exports = {
         exclude: path.resolve(__dirname, 'node_modules'),
       }
     ]
-  }
+  },
 
   // module: {
   //   rules: [
@@ -38,9 +41,16 @@ module.exports = {
   //     }
   //   ]
   // },
-  // plugins: [
-  //   new ExtractTextPlugin({
-  //     filename: `[name]_[contenthash:8].css`
-  //   })
-  // ]
+  plugins: [
+    new ExtractTextPlugin({
+      filename: `[name]_[contenthash:8].css`
+    })
+  ],
+  devtool: 'source-map',
+  devServer: {
+    port: 8083,
+    inline: true,
+    hot: true,
+    historyApiFallback: true
+  }
 }
