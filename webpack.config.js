@@ -16,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         // 1. use: ['style-loader', 'css-loader?minimize'], // querystring 方式
         // 2. require('style-loader!css-loader?minimize!./main.css'); 文件中的引用方式
         // 3.
@@ -25,7 +25,7 @@ module.exports = {
           options: {
             minimize: true
           }
-        }],
+        }, 'postcss-loader', 'sass-loader'],
         exclude: path.resolve(__dirname, 'node_modules'),
       }
     ]
