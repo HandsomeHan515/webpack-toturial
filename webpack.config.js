@@ -1,6 +1,8 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+console.log(__dirname);
+
 module.exports = {
   mode: 'development',
   entry: './main.js',
@@ -20,7 +22,8 @@ module.exports = {
           options: {
             minimize: true
           }
-        }]
+        }],
+        exclude: path.resolve(__dirname, 'node_modules'),
       }
     ]
   }

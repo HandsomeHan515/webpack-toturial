@@ -4,6 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^3.0.2",
     "style-loader": "^0.21.0",
@@ -12,7 +15,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "start": "webpack --config--progress--color",
+    "start": "webpack --devtool source-map",
     "dev": "webpack-dev-server --hot --inline --color --port 8083 --devtool source-map"
   }
 }
